@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Products — Aqua Purified</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="container nav-wrap" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <a href="index.html" class="brand">AquaPurified</a>
+      </div>
+      <nav class="main-nav" style="display:flex;align-items:center;gap:12px">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="track.html">Track</a>
+        <button id="cart-btn" class="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Our Products</h1>
+    <div class="products-grid">
+
+      <!-- 500ml section -->
+      <div class="products-section"><h2>500ml Bottles</h2></div>
+      <article class="product-card">
+        <img src="PicsWater/500mlSingleAqua.png" alt="500ml single" class="small-img add-to-cart" data-id="500ml-single" data-name="500ml Bottle" data-price="10.00">
+        <h3>500ml Bottle</h3>
+        <p>R10.00</p>
+        <button class="btn add-to-cart" data-id="500ml-single" data-name="500ml Bottle" data-price="10.00">Add to Cart</button>
+      </article>
+      <article class="product-card">
+        <img src="PicsWater/500mlpack6Aqua.png" alt="500ml pack 6" class="small-img add-to-cart" data-id="500ml-6" data-name="500ml Pack of 6" data-price="48.00">
+        <h3>500ml Pack of 6</h3>
+        <p>R48.00</p>
+        <button class="btn add-to-cart" data-id="500ml-6" data-name="500ml Pack of 6" data-price="48.00">Add to Cart</button>
+      </article>
+      <article class="product-card">
+        <img src="PicsWater/500mlpack12Aqua.png" alt="500ml pack 12" class="small-img add-to-cart" data-id="500ml-12" data-name="500ml Pack of 12" data-price="92.00">
+        <h3>500ml Pack of 12</h3>
+        <p>R92.00</p>
+        <button class="btn add-to-cart" data-id="500ml-12" data-name="500ml Pack of 12" data-price="92.00">Add to Cart</button>
+      </article>
+      <article class="product-card">
+        <img src="PicsWater/500mlpack24Aqua.png" alt="500ml pack 24" class="small-img add-to-cart" data-id="500ml-24" data-name="500ml Pack of 24" data-price="190.00">
+        <h3>500ml Pack of 24</h3>
+        <p>R190.00</p>
+        <button class="btn add-to-cart" data-id="500ml-24" data-name="500ml Pack of 24" data-price="190.00">Add to Cart</button>
+      </article>
+
+      <!-- 1L section -->
+      <div class="products-section"><h2>1L Bottles</h2></div>
+      <article class="product-card">
+        <img src="PicsWater/1lSingleAqua.png" alt="1L single" class="small-img add-to-cart" data-id="1l-single" data-name="1L Bottle" data-price="15.00">
+        <h3>1L Bottle</h3>
+        <p>R15.00</p>
+        <button class="btn add-to-cart" data-id="1l-single" data-name="1L Bottle" data-price="15.00">Add to Cart</button>
+      </article>
+      <article class="product-card">
+        <img src="PicsWater/1lpack6Aqua.png" alt="1L pack 6" class="small-img add-to-cart" data-id="1l-6" data-name="1L Pack of 6" data-price="78.00">
+        <h3>1L Pack of 6</h3>
+        <p>R78.00</p>
+        <button class="btn add-to-cart" data-id="1l-6" data-name="1L Pack of 6" data-price="78.00">Add to Cart</button>
+      </article>
+      <article class="product-card">
+        <img src="PicsWater/1lpack12Aqua.png" alt="1L pack 12" class="small-img add-to-cart" data-id="1l-12" data-name="1L Pack of 12" data-price="154.00">
+        <h3>1L Pack of 12</h3>
+        <p>R154.00</p>
+        <button class="btn add-to-cart" data-id="1l-12" data-name="1L Pack of 12" data-price="154.00">Add to Cart</button>
+      </article>
+      <article class="product-card">
+        <img src="PicsWater/1lpack24Aqua.png" alt="1L pack 24" class="small-img add-to-cart" data-id="1l-24" data-name="1L Pack of 24" data-price="310.00">
+        <h3>1L Pack of 24</h3>
+        <p>R310.00</p>
+        <button class="btn add-to-cart" data-id="1l-24" data-name="1L Pack of 24" data-price="310.00">Add to Cart</button>
+      </article>
+
+      <!-- 5L section -->
+      <div class="products-section"><h2>5L Bottles</h2></div>
+      <article class="product-card">
+        <img src="PicsWater/5lAqua.png" alt="5L bottle" class="small-img add-to-cart" data-id="5l" data-name="5L Bottle" data-price="70.00">
+        <h3>5L Bottle</h3>
+        <p>R70.00</p>
+        <button class="btn add-to-cart" data-id="5l" data-name="5L Bottle" data-price="70.00">Add to Cart</button>
+      </article>
+    </div>
+
+    <!-- Floating Cart -->
+    <div id="cart-box">
+      <h3>Your Cart</h3>
+      <div id="cart-items">No items yet.</div>
+      <div id="cart-total">Total: R0.00</div>
+      <div style="display:flex;gap:.5rem;margin-top:.6rem">
+        <button id="checkout-btn" class="btn btn-primary">Checkout</button>
+        <button id="clear-cart" class="btn btn-ghost">Clear</button>
+      </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-backdrop" class="modal-backdrop" aria-hidden="true">
+      <div class="checkout-modal" role="dialog" aria-modal="true">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h2>Checkout</h2>
+          <button id="close-checkout" class="btn-ghost">Close</button>
+        </div>
+
+        <div class="checkout-grid">
+          <div>
+            <h3>Delivery & contact</h3>
+            <label class="small">Full name</label>
+            <input id="cust-name" class="input" placeholder="Jane Doe" required>
+            <label class="small">Phone number</label>
+            <input id="cust-phone" class="input" placeholder="+27 82 123 4567" required>
+            <label class="small">Email</label>
+            <input id="cust-email" class="input" placeholder="you@domain.com">
+            <label class="small">Delivery address</label>
+            <textarea id="cust-address" class="input" rows="3" placeholder="Street, Suburb, City"></textarea>
+
+            <div style="margin-top:1rem">
+              <label class="small">Delivery method</label>
+              <select id="delivery-method" class="input">
+                <option value="standard">Standard delivery (2-4 days)</option>
+                <option value="express">Express (same day / next day)</option>
+                <option value="pickup">Pickup</option>
+              </select>
+            </div>
+
+            <div style="margin-top:1rem">
+              <label class="small">Payment method</label>
+              <div style="display:flex;gap:.5rem;align-items:center;margin-top:.4rem">
+                <label><input type="radio" name="payment-method" value="bank" checked> Bank Transfer</label>
+                <label><input type="radio" name="payment-method" value="cash"> Cash on Delivery</label>
+              </div>
+            </div>
+
+            <div id="bank-info" style="margin-top:.8rem;display:block">
+              <h4>Bank Transfer Details</h4>
+              <p class="small">Please send payment to:</p>
+              <p class="small">
+                Bank: Capitec Business<br>
+                Account Name: Thuso Ya Potlako<br>
+                Account Number: 1053495897<br>
+                Reference: Your Order ID
+              </p>
+            </div>
+
+            <div style="margin-top:0.8rem">
+              <button id="place-order" class="btn btn-primary">Place Order</button>
+            </div>
+          </div>
+
+          <aside>
+            <h3>Order summary</h3>
+            <div id="checkout-items" style="max-height:38vh;overflow:auto"></div>
+            <div id="checkout-total" style="font-weight:bold;margin-top:.6rem">Total: R0.00</div>
+            <div style="margin-top:.6rem">
+              <label class="small">After placing the order you'll receive an Order ID to track your delivery.</label>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 Aqua Purified Drinking Water</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

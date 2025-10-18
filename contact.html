@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Aqua Purified</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">AquaPurified</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="track.html">Track</a>
+      </nav>
+    </div>
+  </header>
+<main class="container">
+  <h1>Contact Us</h1>
+
+  <section class="contact-details" style="margin-bottom:2rem">
+    <h2 style="margin-bottom:.4rem">📞 Call or Email Us</h2>
+    <p class="small">Need urgent assistance or prefer to speak with us? We're here to help:</p>
+
+    <div style="margin-top:.8rem">
+      <div style="margin-bottom:.6rem">
+        <strong>Sales & Orders:</strong>
+        <a href="tel:+27601234567" style="color:#0077cc;text-decoration:none;font-weight:500">+27 72 616 8527</a>
+      </div>
+      <div style="margin-bottom:.6rem">
+        <strong>Customer Support:</strong>
+        <a href="tel:+27726158527" style="color:#0077cc;text-decoration:none;font-weight:500">+27 72 616 8527</a>
+      </div>
+      <div style="margin-bottom:.6rem">
+        <strong>WhatsApp:</strong>
+        <a href="https://wa.me/27726158527" target="_blank" style="color:#0077cc;text-decoration:none;font-weight:500">Chat with us on WhatsApp</a>
+      </div>
+      <div>
+        <strong>Email:</strong>
+        <a href="mailto:info@thusoyapotlakoacquisitions.co.za" style="color:#0077cc;text-decoration:none;font-weight:500">info@thusoyapotlakoacquisitions.co.za</a>
+      </div>
+    </div>
+  </section>
+
+<form id="contact-form">
+  <div style="display:grid;gap:.6rem;grid-template-columns:1fr;">
+    <label class="small">Name</label>
+    <input id="name" name="name" required class="input">
+
+    <label class="small">Your Email Address</label>
+    <input id="email" name="email" type="email" required class="input">
+
+    <label class="small">Message</label>
+    <textarea id="message" name="message" rows="6" required class="input"></textarea>
+
+    <input type="hidden" name="access_key" value="f73c247d-1d09-406a-8bcf-5f9f64cb5bc0">
+
+    <div style="display:flex;gap:.6rem;align-items:center">
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      <div id="form-status" class="small" style="margin-left:.5rem"></div>
+    </div>
+  </div>
+</form>
+
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container">© 2025 Aqua Purified Drinking Water</div>
+  </footer>
+
+  <script>
+    // Web3Forms: client-side submit (optional)
+    document.getElementById('contact-form').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const status = document.getElementById('form-status');
+      status.textContent = 'Sending...';
+      const form = e.target;
+      const data = new FormData(form);
+
+      try{
+        const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
+        const json = await res.json();
+        if (json.success){ status.textContent = 'Message sent — thank you!'; form.reset(); }
+        else { status.textContent = 'Error sending message.'; console.log(json); }
+      }catch(err){ status.textContent = 'Network error.'; console.error(err); }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

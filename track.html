@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Track Order — Aqua Purified</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">AquaPurified</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Track your order</h1>
+    <p>Enter your Order ID to check delivery status and tracking updates.</p>
+    <div style="display:flex;gap:.6rem;align-items:center">
+      <input id="order-id" class="input" placeholder="Order ID (from confirmation)"/>
+      <button id="check-order" class="btn btn-primary">Check</button>
+    </div>
+
+    <div id="track-result" style="margin-top:1rem"></div>
+  </main>
+
+<script>
+  document.getElementById('check-order').addEventListener('click', async () => {
+    const id = document.getElementById('order-id').value.trim();
+    const out = document.getElementById('track-result');
+    out.innerHTML = '';
+    if (!id) return alert('Enter an Order ID.');
+
+    try {
+       const res = await fetch('https://aquapurified.onrender.com/api/orders/' + encodeURIComponent(id));
+
+      if (!res.ok) {
+        out.textContent = 'Order not found or server error';
+        return;
+      }
+      const json = await res.json();
+
+      let html = `<h3>Status: ${json.status}</h3>`;
+      html += `<div><strong>Total:</strong> R${(json.total || 0).toFixed(2)}</div>`;
+      html += `<div style="margin-top:.6rem"><strong>Tracking</strong><div>`;
+
+      if (json.trackingStatus) {
+        html += `<div style="font-weight:bold">${json.trackingStatus}</div>`;
+      } else {
+        html += '<div class="small">No tracking updates yet.</div>';
+      }
+
+      html += '</div></div>';
+      out.innerHTML = html;
+    } catch (err) {
+      console.error(err);
+      out.textContent = 'Network error.';
+    }
+  });
+</script>
+
+</body>
+</html>
